@@ -1,0 +1,77 @@
+/* Folha de estilo própria (complementa o Bootstrap) */
+:root {
+  --fundo1: #0f0c29;
+  --fundo2: #302b63;
+  --fundo3: #24243e;
+  --destaque: #ffd166;
+  --roxo: #8e7cc3;
+}
+
+body {
+  min-height: 100vh;
+  color: #fff;
+  background: linear-gradient(135deg, var(--fundo1), var(--fundo2), var(--fundo3));
+  background-attachment: fixed;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* Estrelinhas de fundo */
+.estrelas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 90px 80px, #fff, transparent),
+    radial-gradient(2px 2px at 160px 120px, #ffd166, transparent),
+    radial-gradient(1px 1px at 230px 50px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 300px 160px, #fff, transparent);
+  background-size: 320px 200px;
+  animation: brilho 4s ease-in-out infinite alternate;
+}
+@keyframes brilho { from { opacity: .45; } to { opacity: 1; } }
+
+.cartao-signo {
+  max-width: 760px;
+  width: 100%;
+  background: rgba(255, 255, 255, .08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 24px;
+  color: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .4);
+}
+
+.titulo { font-weight: 700; color: var(--destaque); }
+.simbolos { font-size: 1.4rem; letter-spacing: 6px; color: var(--roxo); }
+.simbolo-grande { font-size: 5rem; line-height: 1; color: var(--destaque); text-shadow: 0 0 25px rgba(255, 209, 102, .6); }
+.text-light-emphasis { color: rgba(255, 255, 255, .75) !important; }
+
+.form-control { border-radius: 12px; }
+.form-label { font-weight: 600; }
+
+.btn-estrela {
+  background: linear-gradient(90deg, #ffd166, #f4a261);
+  border: 0;
+  color: #1b1b3a;
+  font-weight: 700;
+  border-radius: 14px;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-estrela:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 209, 102, .45);
+  color: #1b1b3a;
+}
+
+.info {
+  background: rgba(255, 255, 255, .1);
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+  height: 100%;
+}
+.info small { display: block; color: rgba(255, 255, 255, .65); }
+.info strong { color: var(--destaque); }
+
+.selo { background: var(--roxo); font-weight: 500; font-size: .85rem; }
